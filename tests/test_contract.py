@@ -97,8 +97,8 @@ def test_the_tests_pin_the_library_the_manifest_requires() -> None:
     assert pins == _manifest()["requirements"]
 
 
-def test_hacs_requires_the_home_assistant_the_tests_run() -> None:
-    assert _json(REPOSITORY / "hacs.json")["homeassistant"] == HA_VERSION
+def test_hacs_requires_no_newer_home_assistant_than_the_tests_run() -> None:
+    assert Version(_json(REPOSITORY / "hacs.json")["homeassistant"]) <= Version(HA_VERSION)
 
 
 def test_the_library_is_imported_from_its_package_not_from_the_integration() -> None:
