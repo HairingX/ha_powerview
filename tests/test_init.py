@@ -8,6 +8,7 @@ import pytest
 from homeassistant.config_entries import ConfigEntryState
 from homeassistant.const import STATE_UNAVAILABLE
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers import area_registry as ar
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers import entity_registry as er
 from powerview_connect import Connection
@@ -51,7 +52,9 @@ async def test_the_gateway_and_each_shade_are_devices(
     assert (shade.name, shade.model, shade.sw_version, shade.serial_number) == (
         "Kitchen Window", "Top Down Bottom Up (type 8)", "3.0.433", "0000000000000154")
     assert shade.via_device_id == gateway.id
-    assert shade.suggested_area == "Living Room"
+    assert shade.area_id is not None
+    area = ar.async_get(hass).async_get_area(shade.area_id)
+    assert area is not None and area.name == "Living Room"
     entities = er.async_entries_for_config_entry(er.async_get(hass), config_entry.entry_id)
     assert sorted(entity.entity_id for entity in entities if entity.domain != "button") == [
         "binary_sensor.bedroom_roller_battery", "binary_sensor.simulated_gateway_connection",
