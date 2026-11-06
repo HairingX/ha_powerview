@@ -24,7 +24,7 @@ from powerview_connect import (
     StalledOpenRetry,
 )
 from powerview_connect.testing import ManualClock, SimulatedGateway
-from pytest_homeassistant_custom_component.common import (
+from pytest_homeassistant.common import (
     MockConfigEntry,
     async_capture_events,
     mock_restore_cache_with_extra_data,
