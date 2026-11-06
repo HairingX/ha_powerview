@@ -7,7 +7,7 @@ from homeassistant.const import SIGNAL_STRENGTH_DECIBELS_MILLIWATT, EntityCatego
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import entity_registry as er
 from powerview_connect.testing import ManualClock, SimulatedGateway
-from pytest_homeassistant_custom_component.common import MockConfigEntry
+from pytest_homeassistant.common import MockConfigEntry
 
 from custom_components.powerview_connect.runtime import PowerViewRuntime
 

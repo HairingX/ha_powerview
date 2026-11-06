@@ -15,7 +15,7 @@ from homeassistant.const import CONF_HOST
 from homeassistant.core import HomeAssistant, State
 from powerview_connect import Capabilities, Connection, Rail
 from powerview_connect.testing import ManualClock, SimulatedGateway
-from pytest_homeassistant_custom_component.common import MockConfigEntry
+from pytest_homeassistant.common import MockConfigEntry
 
 from custom_components.powerview_connect.const import DOMAIN
 from custom_components.powerview_connect.runtime import PowerViewRuntime

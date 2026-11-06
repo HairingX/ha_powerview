@@ -12,7 +12,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ServiceValidationError
 from powerview_connect import Capabilities
 from powerview_connect.testing import SimulatedGateway
-from pytest_homeassistant_custom_component.common import MockConfigEntry
+from pytest_homeassistant.common import MockConfigEntry
 
 from custom_components.powerview_connect.const import DOMAIN, SERVICE_SET_POSITIONS
 from custom_components.powerview_connect.runtime import PowerViewRuntime

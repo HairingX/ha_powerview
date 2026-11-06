@@ -10,7 +10,7 @@ from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UN
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import device_registry as dr
 from powerview_connect.testing import ManualClock, SimulatedGateway
-from pytest_homeassistant_custom_component.common import MockConfigEntry
+from pytest_homeassistant.common import MockConfigEntry
 
 from custom_components.powerview_connect import async_remove_config_entry_device
 from custom_components.powerview_connect.const import DOMAIN
